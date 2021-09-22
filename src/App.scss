@@ -1,0 +1,21 @@
+#main {
+  .nav {
+    width: calc(19vw + 30px);
+  }
+
+  .gallery {
+    margin-left: calc(19vw + 30px);
+  }
+}
+
+@media (max-width: 1024px) {
+  #main {
+    .nav {
+      width: 100vw;
+    }
+
+    .gallery {
+      margin-left: 0;
+    }
+  }
+}

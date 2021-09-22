@@ -1,0 +1,168 @@
+@use "../../abstracts";
+
+#navbar {
+  background-color: abstracts.clr(blues, dark1);
+  height: 100%;
+  width: calc(19vw + 30px);
+  min-width: 230px;
+  padding: 20vh 0px;
+  position: fixed;
+  font-size: calc(0.6vw + 11px);
+  text-align: center;
+  font-family: "Kanit", sans-serif;
+
+  .logo {
+    background-color: abstracts.clr(blues, dark2);
+    padding: 20px 0px;
+
+    p {
+      font-size: calc(0.4em + 5px);
+      color: abstracts.clr(whites);
+    }
+
+    h3 {
+      font-family: Audrey;
+      font-size: calc(1.6em + 3px);
+      color: abstracts.clr(whites, light2);
+    }
+  }
+
+  .routes {
+    ul {
+      list-style-type: none;
+      width: 75%;
+      padding: 0;
+      margin-top: 10%;
+      font-size: calc(0.5vw + 15px);
+      margin-left: 12.5% !important;
+      color: abstracts.clr(whites);
+      transition: 0.2s ease-in-out;
+
+      li {
+        padding: 10px 0px 5px;
+        border-bottom: 1px solid abstracts.clr(reds);
+        height: calc(1vw + 30px);
+        width: 0;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          width: 100%;
+        }
+      }
+
+      .active {
+        width: 100%;
+        background-color: rgba(abstracts.clr(browns), 0.2);
+        border-bottom: 1px solid transparent;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          border-bottom: 1px solid abstracts.clr(whites);
+        }
+      }
+
+      a {
+        position: absolute;
+        text-decoration: none;
+        width: 100%;
+        left: 0;
+        font-size: 0.7em;
+        color: abstracts.clr(whites, light1);
+        transition: 0.2s ease-in-out;
+        &:hover {
+          font-size: 0.8em;
+        }
+      }
+    }
+
+    .fa-ellipsis-v {
+      display: none;
+      height: calc(3vw + 10px);
+      width: calc(3vw + 10px);
+      left: 25%;
+      top: 25%;
+      position: absolute;
+      color: abstracts.clr(whites, dark1);
+    }
+
+    .fa-arrow-right {
+      display: none;
+      position: absolute;
+      left: 5%;
+      top: 50%;
+      width: 5vw;
+      height: 5vw;
+      color: abstracts.clr(whites);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  #navbar {
+    position: fixed;
+    height: 10vw;
+    display: flex;
+    width: 100vw;
+    padding: 0;
+    font-size: calc(0.3vw + 14px);
+    z-index: 1;
+
+    .logo {
+      flex: 3 3;
+      order: 2;
+      padding: 10px 0 0;
+    }
+
+    .routes {
+      flex: 0 1;
+      order: 3;
+      min-width: calc(5vw + 25px);
+      position: relative;
+      border-left: 2px solid lighten(abstracts.$dark-blue, 5%);
+
+      ul {
+        position: absolute;
+        height: 100vh;
+        width: 25vw;
+        right: -25vw;
+        margin: 0;
+        z-index: 1;
+        background: rgba(abstracts.$orange, 0.95);
+        padding: 20vh 0 0;
+        transition: 0.5s ease-in-out;
+      }
+
+      .show {
+        right: 0;
+        transition: 0.5s ease-in-out;
+      }
+
+      .fa-arrow-right {
+        display: block;
+      }
+
+      .fa-ellipsis-v {
+        display: block;
+      }
+    }
+
+    .calendar {
+      flex: 0 1;
+      order: 1;
+      border-right: 2px solid lighten(abstracts.$dark-blue, 5%);
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  #navbar {
+    height: 80px;
+  }
+}
+
+@media (max-width: 500px) {
+  #navbar {
+    height: 60px;
+    font-size: calc(0.3vw + 8px);
+  }
+}

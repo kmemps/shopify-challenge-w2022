@@ -1,0 +1,29 @@
+@use "../../abstracts";
+
+#calendarInfo {
+  background-color: abstracts.clr(whites, light2);
+  text-align: center;
+  padding: 10px;
+
+  .center-button {
+    margin: 0 auto;
+    display: block;
+    background-color: abstracts.clr(reds, main);
+    color: abstracts.clr(whites, light2);
+
+    &:hover {
+      background-color: abstracts.clr(browns, light1);
+    }
+  }
+
+  h5 {
+    font-size: 0.9em;
+    font-weight: 400;
+  }
+
+  span {
+    color: abstracts.clr(blues, light1);
+    font-weight: bold;
+    border-bottom: 2px solid white;
+  }
+}

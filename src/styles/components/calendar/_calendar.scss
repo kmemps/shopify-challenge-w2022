@@ -1,0 +1,158 @@
+@use "../../abstracts";
+@import "react-dates/lib/css/_datepicker.css";
+
+#calendar {
+  h5 {
+    color: abstracts.clr(whites);
+  }
+}
+
+.DateRangePickerInput_arrow {
+  display: inline-block;
+  vertical-align: middle;
+  color: abstracts.clr(blues, dark1);
+}
+
+.DateRangePicker {
+  width: 90%;
+  max-width: 350px;
+}
+
+.DateRangePickerInput {
+  width: 100%;
+  background-color: abstracts.clr(whites, main);
+  border-radius: 10px;
+  display: inline-block;
+
+  .DateRangePickerInput_calendarIcon {
+    display: none;
+  }
+  .DateRangePickerInput_calendarIcon_svg {
+    display: none;
+  }
+}
+
+.DateInput {
+  margin: 0;
+  padding: 3px;
+  position: relative;
+  background: transparent;
+  display: inline-block;
+  width: 40%;
+  vertical-align: middle;
+}
+
+.DateInput_input {
+  cursor: pointer;
+  text-align: center;
+  font-weight: 200;
+  font-size: 0.9em;
+  line-height: 1;
+  color: abstracts.clr(reds, dark2);
+  background-color: transparent;
+  width: 100%;
+  padding: 0;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    color: abstracts.clr(reds);
+  }
+}
+
+.DateRangePickerInput__withBorder {
+  border: none;
+}
+
+.CalendarDay__selected {
+  background: abstracts.clr(reds);
+  color: abstracts.clr(whites, light2);
+  border: 0.5px solid abstracts.clr(browns, light2);
+}
+
+.CalendarDay__selected_span {
+  background: rgba(abstracts.clr(browns, light1), 0.5);
+  border: 1px double abstracts.clr(reds, dark1);
+}
+
+.CalendarDay__hovered_span,
+.CalendarDay__hovered_span:hover {
+  background: rgba(abstracts.clr(blues, light1), 0.4);
+  border: 1px double abstracts.clr(blues, light1);
+  color: white;
+}
+.CalendarDay__hovered_span:active {
+  background: rgba(abstracts.clr(blues, light1), 0.5);
+  border: 1px double abstracts.clr(blues, light1);
+  color: white;
+}
+
+.CalendarDay__selected_span:active,
+.CalendarDay__selected_span:hover {
+  background: abstracts.clr(blues, light3);
+  border: 1px double abstracts.clr(blues, light1);
+  color: white;
+}
+
+.DateInput_input {
+  background-color: abstracts.clr(whites, main-1);
+  margin-bottom: 2px;
+}
+
+.DateInput_input__focused {
+  border-bottom: 2px solid abstracts.clr(reds, main-1);
+}
+
+.CalendarDay__selected:hover {
+  background: abstracts.clr(blues, light1);
+  color: abstracts.clr(whites, dark1);
+}
+
+@media (max-width: 1024px) {
+  #calendar {
+    h5 {
+      display: none;
+    }
+    margin: 0;
+  }
+
+  .DateRangePicker {
+    justify-content: left;
+    position: relative;
+    min-width: calc(5vw + 25px);
+
+    .DateRangePickerInput_calendarIcon {
+      display: block;
+    }
+
+    .DateRangePickerInput_calendarIcon_svg {
+      display: block;
+      fill: abstracts.clr(whites, light1);
+      height: calc(3vw + 10px);
+      width: calc(3vw + 10px);
+      left: 30%;
+      top: 30%;
+      position: absolute;
+
+      &:active {
+        fill: abstracts.clr(whites);
+        transition: 0.2s ease-in;
+      }
+    }
+  }
+
+  .DateInput_input {
+    display: none;
+  }
+
+  .DateRangePickerInput__withBorder {
+    width: 0%;
+  }
+
+  .DateInput_input__focused {
+    display: none;
+  }
+
+  .DateRangePickerInput_arrow {
+    display: none;
+  }
+}

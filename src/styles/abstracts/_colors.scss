@@ -1,0 +1,51 @@
+$light-blue: #8d99ae;
+$dark-blue: #2b2d42;
+$red: #c1121f;
+$brown: #e07a5f;
+$white: #fdf0d5;
+
+$beige: #f4f1de;
+$orange: #e07a5f;
+$grey: #3d405b;
+$green: #81b29a;
+$yellow: #f2cc8f;
+
+$colors: (
+  blues: (
+    light1: $light-blue,
+    light2: lighten($light-blue, 10%),
+    light3: lighten($light-blue, 20%),
+    dark1: $dark-blue,
+    dark2: darken($dark-blue, 2%),
+    dark3: darken($dark-blue, 20%),
+  ),
+  reds: (
+    main: $red,
+    light1: lighten($red, 10%),
+    light2: lighten($red, 20%),
+    dark1: darken($red, 10%),
+    dark2: darken($red, 20%),
+    main-1: rgba($red, 0.5),
+  ),
+  browns: (
+    main: $brown,
+    light1: lighten($brown, 10%),
+    light2: lighten($brown, 20%),
+    dark1: darken($brown, 10%),
+    dark2: darken($brown, 20%),
+    main-1: rgba($brown, 0.5),
+  ),
+  whites: (
+    main: $white,
+    light1: lighten($white, 5%),
+    light2: lighten($white, 10%),
+    dark1: darken($white, 10%),
+    dark2: darken($white, 20%),
+    main-1: rgba($white, 0.5),
+  ),
+);
+
+@function clr($base, $shade: main) {
+  $color: map-get(map-get($colors, $base), $shade);
+  @return $color;
+}
